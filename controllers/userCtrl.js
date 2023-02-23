@@ -35,7 +35,7 @@ const registerController= async (req,res)=>{
     }
     catch(err){
         console.log(err)
-        res.status(500).send({success:false, message:`Register contro;ller ${err.message}`})
+        res.status(500).send({success:false, message:`Register controller ${err.message}`})
     }
 }
 
@@ -64,7 +64,7 @@ const authController=async(req,res)=>{
 const user=await UserModel.findById({_id:req.body.userId})
 user.password=undefined
 if(!user){
-    return res.status(200).send({message:"user not font",success:false})
+    return res.status(200).send({message:"user not found",success:false})
 }else{
     res.status(200).send({
         success:true, 
@@ -187,7 +187,7 @@ user.notification.push({
 await user.save()
 res.status(200).send({
     success:true,
-    message:"AppintBook successFully",
+    message:"Appointment Book successFully",
 
 
 })
@@ -237,7 +237,7 @@ try{
 const appointments= await appointmentModel.find({userId:req.body.userId})
 res.status(200).send({
     success:true,
-    message:"Users appointment succcessfully ",
+    message:"Users appointment get succcessfully ",
     data:appointments
 })
 }

@@ -15,7 +15,7 @@ catch(err){
     res.status(500).send({
         success:false,
         err,
-        message:"error, in fetching doctor details"
+        message:"error in fetching doctor details"
     })
 }
 }
@@ -72,7 +72,7 @@ catch(err){
     res.status(500).send({
         success:false,
         err,
-        message:"Error in doc appoinments"
+        message:"Error in doctor appoinments"
     })
 }
 }

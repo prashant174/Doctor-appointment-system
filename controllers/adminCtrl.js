@@ -8,7 +8,7 @@ const getAllUsersController=async(req,res)=>{
 const users= await userModel.find({})
 res.status(200).send({
     success:true,
-    message:"users data",
+    message:"users data fetch success full",
     data:users,
 })
     }catch(err){
@@ -26,14 +26,14 @@ const getAllDoctorsController=async(req,res)=>{
 const doctors= await doctorModel.find({})
 res.status(200).send({
     success:true,
-    message:"doctors data",
+    message:"doctors data get successfully",
     data:doctors
 })
     }catch(err){
         console.log(err)
         res.status(500).send(({
             success:false,
-            message:'error whil;e getting doctors data',
+            message:'error while getting doctors data',
             err
         }))
     }
@@ -54,7 +54,7 @@ user.isDoctor= status ==="approved"? true: false
 await user.save()
 res.status(201).send({
     success:true,
-    message:"account ststus updated",
+    message:"account status updated",
     data:doctor,
 })
 }catch(err){
